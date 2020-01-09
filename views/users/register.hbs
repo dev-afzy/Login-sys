@@ -1,0 +1,34 @@
+
+	<div class="main-w3layouts wrapper">
+		<h1>SignUp</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+                    {{#if errors}}
+                       {{#each errors}}
+                            {{#each this}}                            
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{this}}
+                                </div>
+                            {{/each}}
+                        {{/each}}
+						{{else}}
+                    {{/if}}    
+
+				<form action="/users/register" method="post">
+					<input class="text" type="text" name="username" placeholder="Username" required="">
+					<input class="text email" type="email" name="email" placeholder="Email" required="">
+					<input class="text" type="password" name="password" placeholder="Password" required="">
+					<input class="text w3lpass" type="password" name="password2" placeholder="Confirm Password" required="">
+					<div class="wthree-text">
+						<label class="anim">
+							<input type="checkbox" class="checkbox" required="">
+							<span>I Agree To The Terms & Conditions</span>
+						</label>
+						<div class="clear"> </div>
+					</div>
+					<input type="submit" value="Register">
+				</form>
+				<p>Don't have an Account? <a href="/users/login"> Login Now!</a></p>
+			</div>
+		</div>
+	</div>
